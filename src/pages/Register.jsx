@@ -32,7 +32,7 @@ export default function Register() {
     // } = req.body;
     axios
       .post(
-        "http://localhost:3000/api/auth/register",
+        "https://ai-chatbot-backend-oqdi.onrender.com/api/auth/register",
         {
           email: form.email,
           fullName: {

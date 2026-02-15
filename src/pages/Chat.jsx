@@ -31,7 +31,7 @@ const Chat = () => {
   const handleCreateNewChat = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/chat",
+        "https://ai-chatbot-backend-oqdi.onrender.com/api/chat",
         { title: newChatTitle },
         { withCredentials: true },
       );
@@ -47,7 +47,7 @@ const Chat = () => {
 
   // Socket AI Response Listener
   useEffect(() => {
-    const socket = io("http://localhost:3000", { withCredentials: true });
+    const socket = io("https://ai-chatbot-backend-oqdi.onrender.com", { withCredentials: true });
     socketRef.current = socket;
 
     const handleAIResponse = ({ chat, content }) => {
@@ -71,7 +71,7 @@ const Chat = () => {
   useEffect(() => {
     const fetchChats = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/chat", {
+        const res = await axios.get("https://ai-chatbot-backend-oqdi.onrender.com/api/chat", {
           withCredentials: true,
         });
         console.log("Fetched chats:", res?.data.chats);
@@ -94,7 +94,7 @@ const Chat = () => {
     const fetchMessages = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/chat/${activeChatId}/messages`,
+          `https://ai-chatbot-backend-oqdi.onrender.com/api/chat/${activeChatId}/messages`,
           { withCredentials: true },
         );
         console.log("Active chats messages: ", res?.data.chat.messages);

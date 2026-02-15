@@ -19,7 +19,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
-    axios.post("/api/auth/login", {
+    axios.post("https://ai-chatbot-backend-oqdi.onrender.com/api/auth/login", {
       email: form.email,
       password: form.password,
     },

@@ -16,7 +16,7 @@ const ProfileMenu = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/api/auth/logout",
+        "https://ai-chatbot-backend-oqdi.onrender.com/api/auth/logout",
         {},
         { withCredentials: true },
       );
